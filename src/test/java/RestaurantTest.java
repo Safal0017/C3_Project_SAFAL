@@ -3,6 +3,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
@@ -73,4 +75,18 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    //>>>>>>>>>>>>>>>>>>>>>>>>>>>TOTAL ORDER VALUE<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+    @Test
+    public void adding_items_to_the_order_should_return_total_order_value() {
+        List<String> orderItems = new ArrayList<String>();
+        orderItems.add("Sweet corn soup");
+        //orderItems.add("Vegetable lasagne");
+        int totalCost = restaurant.getTotalOrderValue(orderItems, restaurant);
+        assertThat(totalCost, equalTo(119));
+        System.out.println(totalCost);
+    }
+
+    //<<<<<<<<<<<<<<<<<<<<<<<TOTAL ORDER VALUE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
