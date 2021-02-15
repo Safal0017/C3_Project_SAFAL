@@ -85,7 +85,7 @@ class RestaurantTest {
         //orderItems.add("Vegetable lasagne");
         int totalCost = restaurant.getTotalOrderValue(orderItems, restaurant);
         assertThat(totalCost, equalTo(119));
-        System.out.println(totalCost);
+        //System.out.println(totalCost);
     }
 
     //<<<<<<<<<<<<<<<<<<<<<<<TOTAL ORDER VALUE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
